@@ -6,8 +6,9 @@ import java.util.Scanner;
 
 /**
  * 
- * @author Nick Klasse, welche bidirektionale Kommunikation zu ESP32 mittels UDP
- *         ermöglicht.
+ * @author Nick 
+ * Klasse, welche bidirektionale Kommunikation zu ESP32 mittels UDP
+ *         ermÃ¶glicht.
  * 
  */
 
@@ -31,9 +32,9 @@ public class UDPKommunikation implements Runnable {
 		InetAddress zielIP = InetAddress.getByName("192.168.4.1");
 		int zielPort = 1234;
 
-		System.out.println("Geben sie etwas zu senden ein und bestätigen sie mit Eingabe.");
+		System.out.println("Geben sie etwas zu senden ein und bestÃ¤tigen sie mit Eingabe.");
 
-		// 1. Thread ist für die Eingabe des Benutzer verantwortlich.
+		// 1. Thread ist fÃ¼r die Eingabe des Benutzer verantwortlich.
 		while (true) {
 			// Eingegebenen Daten
 			byte[] sendData = scanner.nextLine().trim().getBytes();
@@ -52,9 +53,9 @@ public class UDPKommunikation implements Runnable {
 
 	@Override
 	public void run() {
-		// 2. Thread ist für das Empfangen der Daten vom ESP 32 verantwortlich.
+		// 2. Thread ist fÃ¼r das Empfangen der Daten vom ESP 32 verantwortlich.
 		while (true) {
-			// Halter für Empfangsdaten
+			// Halter fÃ¼r Empfangsdaten
 			byte[] daten = new byte[MAX_UDP_SIZE];
 			DatagramPacket empfangPaket = new DatagramPacket(daten, MAX_UDP_SIZE);
 
